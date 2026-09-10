@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lic. Silvina — Psicóloga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBF1F3;
+    --bg-alt: #F6E4E9;
+    --card: #FFFFFF;
+    --border: #EFD3DA;
+    --ink: #4A2432;
+    --ink-soft: #8C5D6C;
+    --accent: #B15271;
+    --accent-deep: #8F3E58;
+    --chip: #F3DCE2;
+    --chip-ink: #7A3A4E;
+    --max: 780px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0 0 0.5em;
+    color:var(--ink);
+  }
+  a{color:var(--accent-deep);}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  header.site{
+    position:sticky; top:0; z-index:20;
+    background:rgba(251,241,243,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    max-width:var(--max); margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav .brand{font-family:'Fraunces',serif; font-size:18px; color:var(--ink);}
+  .nav ul{list-style:none; display:flex; gap:22px; margin:0; padding:0;}
+  .nav a{text-decoration:none; color:var(--ink-soft); font-size:14px;}
+  .nav a:hover, .nav a:focus-visible{color:var(--accent-deep);}
+  .nav .cta{
+    background:var(--accent); color:#fff; padding:8px 16px;
+    border-radius:8px; font-size:14px; text-decoration:none;
+  }
+  .nav .cta:hover{background:var(--accent-deep);}
+  @media (max-width:640px){ .nav ul{display:none;} }
+
+  section{padding:64px 0;}
+  section.alt{background:var(--bg-alt);}
+
+  .hero{padding-top:72px; padding-bottom:56px;}
+  .hero-inner{display:flex; align-items:center; gap:36px; flex-wrap:wrap;}
+  .avatar{
+    width:112px; height:112px; border-radius:50%;
+    background:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:'Fraunces',serif; font-size:32px;
+    flex-shrink:0;
+    opacity:0; transform:translateY(8px);
+    animation:rise .7s ease forwards;
+  }
+  .hero-text{opacity:0; transform:translateY(8px); animation:rise .7s ease .12s forwards;}
+  @keyframes rise{to{opacity:1; transform:translateY(0);}}
+  .hero h1{font-size:clamp(28px,4vw,38px); line-height:1.15;}
+  .hero p.lede{color:var(--ink-soft); font-size:17px; max-width:52ch; margin:0 0 20px;}
+  .btn{
+    display:inline-block; background:var(--accent); color:#fff;
+    padding:12px 22px; border-radius:9px; text-decoration:none;
+    font-size:15px; font-weight:500; border:none; cursor:pointer;
+  }
+  .btn:hover, .btn:focus-visible{background:var(--accent-deep);}
+  .btn-outline{
+    display:inline-block; background:transparent; color:var(--accent-deep);
+    padding:11px 20px; border-radius:9px; text-decoration:none;
+    font-size:15px; border:1.5px solid var(--accent-deep); margin-left:10px;
+  }
+
+  .eyebrow{font-size:13px; color:var(--ink-soft); margin:0 0 10px;}
+
+  .about-grid{display:flex; gap:40px; flex-wrap:wrap; align-items:flex-start;}
+  .about-grid .col{flex:1 1 320px;}
+  .credentials{list-style:none; margin:18px 0 0; padding:0; font-size:14px; color:var(--ink-soft);}
+  .credentials li{padding:8px 0; border-top:1px solid var(--border);}
+  .credentials li:first-child{border-top:none;}
+
+  .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
+  .chip{
+    background:var(--chip); color:var(--chip-ink);
+    padding:7px 15px; border-radius:20px; font-size:13.5px;
+  }
+
+  .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:18px; margin-top:28px;}
+  .card{
+    background:var(--card); border:1px solid var(--border);
+    border-radius:12px; padding:20px;
+  }
+  .card h3{font-size:17px; margin-bottom:6px;}
+  .card p{font-size:14px; color:var(--ink-soft); margin:0;}
+
+  article.post{
+    background:var(--card); border:1px solid var(--border);
+    border-radius:12px; padding:20px 22px; margin-bottom:14px;
+  }
+  article.post .meta{font-size:12.5px; color:var(--ink-soft); margin-bottom:6px;}
+  article.post h3{font-size:16.5px; margin-bottom:6px;}
+  article.post p{font-size:14px; color:var(--ink-soft); margin:0 0 10px;}
+  article.post a{font-size:13.5px; text-decoration:none;}
+
+  .faq details{
+    border-bottom:1px solid var(--border);
+    padding:16px 0;
+  }
+  .faq summary{
+    cursor:pointer; font-family:'Fraunces',serif; font-size:16px;
+    color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+"; color:var(--accent-deep); font-size:20px; font-family:'Work Sans',sans-serif;}
+  .faq details[open] summary::after{content:"–";}
+  .faq p{font-size:14.5px; color:var(--ink-soft); margin:10px 0 0;}
+
+  .contact-box{
+    background:var(--card); border:1px solid var(--border);
+    border-radius:14px; padding:32px; display:flex; gap:32px; flex-wrap:wrap; justify-content:space-between;
+  }
+  .contact-box .col{flex:1 1 220px;}
+  .contact-list{list-style:none; padding:0; margin:14px 0 0; font-size:14.5px;}
+  .contact-list li{margin-bottom:8px;}
+
+  footer{
+    padding:28px 0; text-align:center; font-size:13px; color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <span class="brand">Lic. Silvina</span>
+    <ul>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#articulos">Artículos</a></li>
+      <li><a href="#faq">Preguntas</a></li>
+    </ul>
+    <a class="cta" href="#contacto">Pedir turno</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="avatar">SL</div>
+    <div class="hero-text">
+      <h1>Un espacio para pensar(te), sin apuro.</h1>
+      <p class="lede">Acompañamiento psicológico para adultos, con enfoque cognitivo-conductual. Sesiones online y presenciales en Buenos Aires.</p>
+      <a class="btn" href="#contacto">Pedir turno</a>
+      <a class="btn-outline" href="#sobre-mi">Conocé mi enfoque</a>
+    </div>
+  </div>
+</section>
+
+<section id="sobre-mi" class="alt">
+  <div class="wrap about-grid">
+    <div class="col">
+      <p class="eyebrow">Sobre mí</p>
+      <h2>Silvina, Lic. en Psicología</h2>
+      <p>Trabajo desde un enfoque cognitivo-conductual, con foco en ansiedad, autoestima y procesos de cambio. Creo en la terapia como un espacio de escucha activa, sin juicio, donde encontrar herramientas concretas para el día a día.</p>
+    </div>
+    <div class="col">
+      <ul class="credentials">
+        <li>Lic. en Psicología — Universidad de Buenos Aires</li>
+        <li>Formación en Terapia Cognitivo-Conductual</li>
+        <li>+8 años de experiencia clínica</li>
+        <li>Modalidad online y presencial</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <p class="eyebrow">Servicios</p>
+    <h2>Cómo puedo acompañarte</h2>
+    <div class="chips">
+      <span class="chip">Terapia individual</span>
+      <span class="chip">Terapia de pareja</span>
+      <span class="chip">Ansiedad</span>
+      <span class="chip">Autoestima</span>
+      <span class="chip">Duelo</span>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Terapia individual</h3>
+        <p>Sesiones semanales de 50 minutos, online o presenciales, adaptadas a tu proceso.</p>
+      </div>
+      <div class="card">
+        <h3>Terapia de pareja</h3>
+        <p>Un espacio conjunto para trabajar la comunicación y los conflictos recurrentes.</p>
+      </div>
+      <div class="card">
+        <h3>Primera consulta</h3>
+        <p>Un encuentro inicial para conocernos y definir juntos el mejor camino a seguir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="articulos" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Artículos de interés</p>
+    <h2>Reflexiones y recursos</h2>
+    <article class="post">
+      <p class="meta">5 min de lectura</p>
+      <h3>Cómo manejar la ansiedad en el día a día</h3>
+      <p>Algunas herramientas simples para reconocer y regular los picos de ansiedad cotidiana.</p>
+      <a href="#">Leer artículo →</a>
+    </article>
+    <article class="post">
+      <p class="meta">4 min de lectura</p>
+      <h3>Primera sesión: qué esperar</h3>
+      <p>Cómo es el primer encuentro, qué se conversa y cómo se arma el proceso terapéutico.</p>
+      <a href="#">Leer artículo →</a>
+    </article>
+    <article class="post">
+      <p class="meta">6 min de lectura</p>
+      <h3>Autoestima: construir una relación más amable con vos mismo</h3>
+      <p>Ideas para identificar patrones de autocrítica y empezar a trabajarlos en terapia.</p>
+      <a href="#">Leer artículo →</a>
+    </article>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq">
+    <p class="eyebrow">Preguntas frecuentes</p>
+    <h2>Antes de empezar</h2>
+    <details>
+      <summary>¿Cómo son las sesiones online?</summary>
+      <p>Se realizan por videollamada, con la misma duración y frecuencia que las presenciales.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto dura cada sesión?</summary>
+      <p>Cada sesión dura 50 minutos, generalmente con frecuencia semanal.</p>
+    </details>
+    <details>
+      <summary>¿Cómo se abonan las sesiones?</summary>
+      <p>Se coordina el medio de pago en la primera consulta, según tu conveniencia.</p>
+    </details>
+    <details>
+      <summary>¿La información que comparto es confidencial?</summary>
+      <p>Sí, todo lo trabajado en sesión está protegido por el secreto profesional.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contacto" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Contacto</p>
+    <h2>Escribime para coordinar tu primer turno</h2>
+    <div class="contact-box">
+      <div class="col">
+        <h3>Datos de contacto</h3>
+        <ul class="contact-list">
+          <li>📧 contacto@silvina-psicologa.com</li>
+          <li>💬 WhatsApp: +54 9 11 0000-0000</li>
+          <li>📍 CABA, Buenos Aires (también online)</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Pedí tu turno</h3>
+        <p style="font-size:14px;color:var(--ink-soft);margin:0 0 14px;">Contame brevemente qué te trae a terapia y te respondo a la brevedad.</p>
+        <a class="btn" href="https://wa.me/5491100000000" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Lic. Silvina — Psicóloga · CABA, Argentina
+</footer>
+
+</body>
+</html>
