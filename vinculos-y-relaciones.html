@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vínculos y relaciones: ¿por qué se repiten los mismos patrones? — Lic. Silvina</title>
+<meta name="description" content="Qué dice el psicoanálisis sobre la repetición de conflictos en nuestros vínculos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBF1F3;
+    --bg-alt: #F6E4E9;
+    --card: #FFFFFF;
+    --border: #EFD3DA;
+    --ink: #4A2432;
+    --ink-soft: #8C5D6C;
+    --accent: #B15271;
+    --accent-deep: #8F3E58;
+    --chip: #F3DCE2;
+    --chip-ink: #7A3A4E;
+    --max: 780px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0 0 0.5em;
+    color:var(--ink);
+  }
+  a{color:var(--accent-deep);}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  header.site{
+    position:sticky; top:0; z-index:20;
+    background:rgba(251,241,243,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    max-width:var(--max); margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav .brand{font-family:'Fraunces',serif; font-size:18px; color:var(--ink); text-decoration:none;}
+  .nav ul{list-style:none; display:flex; gap:22px; margin:0; padding:0;}
+  .nav a{text-decoration:none; color:var(--ink-soft); font-size:14px;}
+  .nav a:hover, .nav a:focus-visible{color:var(--accent-deep);}
+  .nav .cta{
+    background:var(--accent); color:#fff; padding:8px 16px;
+    border-radius:8px; font-size:14px; text-decoration:none;
+  }
+  .nav .cta:hover{background:var(--accent-deep);}
+  @media (max-width:640px){ .nav ul{display:none;} }
+
+  .back-link{
+    display:inline-block; margin:28px 0 0; font-size:13.5px;
+    color:var(--ink-soft); text-decoration:none;
+  }
+  .back-link:hover{color:var(--accent-deep);}
+
+  .article-hero{padding:18px 0 0;}
+  .eyebrow{font-size:13px; color:var(--ink-soft); margin:0 0 10px;}
+  .article-hero h1{font-size:clamp(26px,4vw,36px); line-height:1.2; max-width:22ch;}
+  .meta{font-size:12.5px; color:var(--ink-soft); margin:12px 0 24px;}
+
+  /* Espacio de imagen destacada: reemplazar este div por un <img src="..."> con la foto real */
+  .hero-image{
+    width:100%; aspect-ratio:16/7; border-radius:14px;
+    background:linear-gradient(135deg, var(--chip) 0%, var(--accent) 100%);
+    margin:0 0 36px;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:'Fraunces',serif; font-size:14px; opacity:0.85;
+  }
+
+  article.content{
+    background:var(--card); border:1px solid var(--border);
+    border-radius:14px; padding:36px 40px; margin-bottom:20px;
+    max-width:68ch;
+  }
+  article.content h2{font-size:20px; margin-top:1.6em;}
+  article.content h2:first-child{margin-top:0;}
+  article.content p{font-size:15.5px; color:var(--ink); margin:0 0 1.1em;}
+  article.content ul{font-size:15.5px; color:var(--ink); padding-left:1.3em; margin:0 0 1.1em;}
+  article.content li{margin-bottom:0.4em;}
+
+  .cta-box{
+    background:var(--bg-alt); border:1px solid var(--border);
+    border-radius:14px; padding:28px 32px; margin:24px 0 56px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
+  }
+  .cta-box p{margin:0; font-size:15px; color:var(--ink-soft); max-width:40ch;}
+  .btn{
+    display:inline-block; background:var(--accent); color:#fff;
+    padding:12px 22px; border-radius:9px; text-decoration:none;
+    font-size:15px; font-weight:500; border:none; cursor:pointer; white-space:nowrap;
+  }
+  .btn:hover, .btn:focus-visible{background:var(--accent-deep);}
+
+  footer{
+    padding:28px 0; text-align:center; font-size:13px; color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="../index.html">Lic. Silvina</a>
+    <ul>
+      <li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="../index.html#servicios">Servicios</a></li>
+      <li><a href="../index.html#articulos">Artículos</a></li>
+      <li><a href="../index.html#faq">Preguntas</a></li>
+    </ul>
+    <a class="cta" href="../index.html#contacto">Pedir turno</a>
+  </div>
+</header>
+
+<section class="wrap article-hero">
+  <a class="back-link" href="../index.html#articulos">← Volver a artículos</a>
+  <p class="eyebrow">Artículos de interés</p>
+  <h1>Vínculos y relaciones: ¿por qué se repiten los mismos patrones?</h1>
+  <p class="meta">5 min de lectura</p>
+  <div class="hero-image" aria-hidden="true">Espacio para imagen</div>
+</section>
+
+<section class="wrap">
+  <article class="content">
+    <p>Pareja, familia, amistades, trabajo: los vínculos ocupan un lugar central en nuestra vida, y también son una de las principales fuentes de malestar cuando algo no funciona. Muchas personas llegan a terapia con la misma pregunta: “¿por qué me pasa siempre lo mismo, con personas distintas?”</p>
+    <h2>Los vínculos como territorio de repetición</h2>
+    <p>Desde el psicoanálisis, entendemos que en nuestros vínculos actuales suele resonar algo de nuestra historia: modos de relacionarnos que aprendimos, roles que ocupamos desde chicos, formas de amar o de pedir que se fueron construyendo mucho antes de la relación que hoy te preocupa.</p>
+    <p>Por eso, cuando alguien dice “siempre elijo a la misma persona, aunque cambie el nombre”, no se trata de mala suerte. Hay algo ahí que se repite, y que merece ser pensado.</p>
+    <h2>No se trata de buscar culpables</h2>
+    <p>Un error frecuente es pensar el trabajo sobre los vínculos como una búsqueda de quién tiene la razón, o quién está “mal”. El enfoque psicoanalítico no apunta a juzgar al otro ni a uno mismo, sino a entender qué lugar ocupás en esas dinámicas, qué necesidades se juegan ahí, y qué es lo que, sin darte cuenta, volvés a poner en juego una y otra vez.</p>
+    <p>Esa comprensión es la que permite, con el tiempo, empezar a vincularte de otra manera.</p>
+    <h2>Trabajar el vínculo con el otro empieza por el vínculo con uno mismo</h2>
+    <p>Muchas veces, lo que se transforma primero no es la relación externa, sino la relación que tenés con vos mismo: con tus deseos, tus miedos, tus formas de pedir o de callar. A partir de ahí, los vínculos con los demás también empiezan a moverse.</p>
+    <p>Si sentís que en tus relaciones se repite algo que te genera malestar, o que no lográs entender del todo, podemos empezar a pensarlo juntos.</p>
+
+  </article>
+
+  <div class="cta-box">
+    <p>¿Sentís que esto te resuena? Podemos conversarlo en una primera sesión, sin compromiso de continuar.</p>
+    <a class="btn" href="../index.html#contacto">Pedir turno</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Lic. Silvina — Psicóloga · CABA, Argentina
+</footer>
+
+</body>
+</html>
